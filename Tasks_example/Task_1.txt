@@ -1,0 +1,14 @@
+1.//совпадение ["Mango", "Ajax", "Poly"] при введении login = prompt("Ener your login");
+
+const users = ["Mango", "Ajax", "Poly"];
+const login = prompt("Ener your login");
+
+const isRegistered = users.includes(login);
+
+if (isRegistered) {
+  console.log("right name");
+} else {
+  console.log("wrong data");
+}
+
+//=============================================================================================

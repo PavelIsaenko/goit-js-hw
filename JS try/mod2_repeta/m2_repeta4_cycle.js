@@ -236,15 +236,15 @@
 // ==================================================
 // includes
 
-const numbers = [1, 2, 3, 4, 5];
-// console.log(numbers.includes(3));
-const numberToFind = 3;
-let result = false;
-for (const number of numbers) {
-  if (number === numberToFind) {
-    result = true;
-    break;
-  }
-}
+// const numbers = [1, 2, 3, 4, 5];
+// // console.log(numbers.includes(3));
+// const numberToFind = 3;
+// let result = false;
+// for (const number of numbers) {
+//   if (number === numberToFind) {
+//     result = true;
+//     break;
+//   }
+// }
 
-console.log(result);
+// console.log(result);
