@@ -87,7 +87,8 @@
 
 // const min = 10;
 // const max = 30;
-// const value = 25;
+// // const value = prompt("enter:");
+// const value = 24;
 // let message;
 // if (value < 10) {
 //   message = "Less then 10";
@@ -205,13 +206,39 @@
 // ===================================
 //проверка на целые числа
 
-const result = prompt("");
+// const result = prompt("");
 
-if (result === null) {
-  console.log("null");
-} else if (Number.isInteger(Number(result))) {
-  console.log("int");
-} else {
-  console.log("rest");
-}
-console.log();
+// if (result === null) {
+//   console.log("null");
+// } else if (Number.isInteger(Number(result))) {
+//   console.log("int");
+// } else {
+//   console.log("rest");
+// }
+
+// ===================================
+
+// задаем диапазон чисел для ввода и проверки от min = 10 и до max = 30
+// 1-й вариант-----------------
+// const min = 10;
+// const max = 30;
+// let message = prompt(":");
+// message = Number(message);
+// console.log(message);
+// if (message >= min && message <= max) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+// -------------------------------------------
+// 2-й вариант ----------------
+// let value = prompt(":");
+// value = Number(value);
+// const isRange = value > 10 && value < 30;
+// console.log(value);
+// if (isRange) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+

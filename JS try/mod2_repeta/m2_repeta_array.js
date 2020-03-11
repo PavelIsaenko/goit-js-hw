@@ -119,4 +119,15 @@
 // console.log(cards);
 
 // ====================================
+// to creat slider gallery
+
+// const images = ["imae-1.jpg", "imae-2.jpg", "imae-3.jpg", "imae-4.jpg"];
+// let currentImageIdx = 0; // задаем индекс картинки для отображения
+// console.log(images[currentImageIdx]); // для отображения заданной картинки
+// currentImageIdx += 1; // увеличиваем индекс на один для отображения следующей картинки
+// console.log(images[currentImageIdx]);
+// currentImageIdx += 1;
+// console.log(images[currentImageIdx]);
+// currentImageIdx += 1;
+// console.log(images[currentImageIdx]);
 
