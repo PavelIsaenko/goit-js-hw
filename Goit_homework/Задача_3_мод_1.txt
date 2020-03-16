@@ -1,0 +1,9 @@
+// const ADMIN_PASSWORD = "123qwerty";
+// let message = prompt("Please entered password:");
+// console.log(message);
+
+// // if (message === ADMIN_PASSWORD) {
+// //   console.log(true);
+// // } else {
+// //   console.log(false);
+// }
