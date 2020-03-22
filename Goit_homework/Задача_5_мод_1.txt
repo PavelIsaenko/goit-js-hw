@@ -1,0 +1,68 @@
+Задание 5
+Пользователь может оформить доставку товара к себе в страну, указав ее при посещении страницы в prompt. Учти, пользователь может ввести имя страны не только буквами нижнего регистра, а к примеру 'кИтАЙ'.
+
+Напиши скрипт который выводит сообщение о стоимости доставки в указанную страну. Обязательно используй switch. Формат сообщения: 'Доставка в [страна] будет стоить [цена] кредитов'.
+
+Но доставка есть не везде, если указанной страны нет в списке, то выводи в alert сообщение 'В вашей стране доставка не доступна'.
+
+Ниже приведен список стран и стоимость доставки.
+
+Китай - 100 кредитов
+Чили - 250 кредитов
+Австралия - 170 кредитов
+Индия - 80 кредитов
+Ямайка - 120 кредитов
+
+=========================================================
+const china = "Китай";
+let chinaPrice = 100;
+const chili = "Чили";
+let chiliPrice = 250;
+const australia = "Австралия";
+let australiaPrice = 170;
+const india = "Индия";
+let indiaPrice = 80;
+const jamaika = "Ямайка";
+let jamaikaPrice = 120;
+
+let userChoice = prompt(
+  "Введите название страны, куда Вы хотите оформить заявку:"
+);
+let message;
+
+if (userChoice === null) {
+  alert("В вашей стране доставка не доступна");
+} else {
+  const searchStr = userChoice.toLowerCase();
+
+  switch (searchStr) {
+    case china.toUpperCase():
+    case china.toLowerCase():
+      message = `Доставка в ${china} будет стоить ${chinaPrice} кредитов`;
+      break;
+
+    case chili.toLowerCase():
+    case chili.toUpperCase():
+      message = `Доставка в ${chili} будет стоить ${chiliPrice} кредитов`;
+      break;
+
+    case australia.toLowerCase():
+    case australia.toUpperCase():
+      message = `Доставка в ${australia} будет стоить ${australiaPrice} кредитов`;
+      break;
+
+    case india.toUpperCase():
+    case india.toLowerCase():
+      message = `Доставка в ${india} будет стоить ${indiaPrice} кредитов`;
+      break;
+
+    case jamaika.toLowerCase():
+    case jamaika.toUpperCase():
+      message = `Доставка в ${jamaika} будет стоить ${jamaikaPrice} кредитов`;
+      break;
+
+    default:
+      message = "nothing";
+  }
+}
+console.log(message);

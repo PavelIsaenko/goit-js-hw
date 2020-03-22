@@ -245,11 +245,25 @@
 // console.log(message);
 
 // ================================================
-let result = prompt("");
-if (result === null) {
-  console.log("null");
-} else if (Number.isInteger(Number(result))) {
-  console.log("int");
-} else {
-  console.log("rest");
-}
+
+// let result = prompt("");
+// if (result === null) {
+//   console.log("null");
+// } else if (Number.isInteger(Number(result))) {
+//   console.log("int");
+// } else {
+//   console.log("rest");
+// }
+
+// const productTitle = "samsung Note 10";
+// // const searchStr = prompt("");
+// let searchStr = prompt("Enter world:");
+// const titleInLc = productTitle.toLowerCase();
+// const searchStrInLC = searchStr.toLowerCase();
+// const passed = titleInLc.includes(searchStrInLC);
+// // console.log(passed);
+// if (passed) {
+//   alert("find");
+// } else {
+//   console.log("epsent");
+// }

@@ -13,7 +13,31 @@
 // console.log(name[2]);
 
 // const str1 = "what do you do?";
-// const bigLetter = str1[0].toUpperCase();
-// const str2 = str1.slice(1).toLowerCase();
+// let message = prompt(":");
+// const bigLetter = str1.toUpperCase();
+// const str2 = str1.toLowerCase();
 // const common = bigLetter + str2;
-// console.log(common);
+// // console.log(common.includes(message));
+
+// if (common) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+// ===================================================
+// const str1 = "what do you do?";
+// let message = prompt(":");
+// // const bigLetter = str1.toLowerCase();
+// const mess = message.toLowerCase();
+// const str2 = str1.toLowerCase();
+// const common = str2.includes(mess);
+// // console.log(common.includes(message));
+
+// if (common) {
+//   console.log(true);
+// } else {
+//   console.log(false);
+// }
+// ================================================
+// const array = ["ara", "kesha", "jogi", "ludvik"];
+// console.log(array);
