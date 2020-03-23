@@ -12,11 +12,15 @@ const ordered = 50;
 ===========================================================
 
 const total = 100;
-const ordered = 50;
-let message = prompt("enter number:");
+let ordered = prompt("единиц товара в заказе:");
+ordered = Number(ordered);
+// let ordered = 20;
+// let ordered = 50;
+// let ordered = 80;
+// let ordered = 130;
 
-if (message > ordered) {
+if (ordered > total) {
   console.log("На складе недостаточно твоаров!");
-} else if (message < total) {
+} else if (ordered < total) {
   console.log("Заказ оформлен, с вами свяжется менеджер");
 }
