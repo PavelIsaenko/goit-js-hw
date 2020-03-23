@@ -335,7 +335,7 @@
 // }
 
 // -------------------------------------------------
-
+//итерация массива(перебор массива)
 // let counter = 0;
 // const products = ["apple", "grape", "banan", "lemon"];
 
@@ -347,13 +347,240 @@
 // ==============================================
 // do...while
 
-let total = 0;
-let userInput;
+// пока не нажмет "кенсел" будет появляться табло "Введите число:"
+// let total = 0;
+// let userInput;
 
-do {
-  userInput = +prompt("Введите число:");
-  total += userInput;
-} while (userInput);
-alert(`Общая сумма чисел равна ${total}`);
+// do {
+//   userInput = +prompt("Введите число:");
+//   total += userInput;
+// } while (userInput);
+// alert(`Общая сумма чисел равна ${total}`);
 
 // =======================================================
+// Выполняем до тех пор пока не равно = null и введено число 10
+// let userInput;
+
+// do {
+//   userInput = prompt("Введите число 10:");
+//   console.log(userInput);
+// } while (Number(userInput) !== 10);
+
+// ===============================================================
+// // цикл for- со счетчиком
+
+// const products = ["apples", "grapes", "bananas", "plur"];
+
+// for (let i = 0; i < products.length; i += 1) {
+//   console.log(i); //0 1 2 3
+//   console.log(`products${i}:`, products[i]); // apples grapes bananas plur
+// }
+
+// -----------------------------------------------
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(i); //0 1 2 3
+//   console.log(`numbers${i}:`, numbers[i]); //
+
+//   numbers[i] = numbers[i] * 2; //  изменен массив, то есть умножен * 2 [2, 4, 6, 8, 10]
+// }
+// console.log(numbers);
+
+//------------------------------------------------------
+// // ситуация с for...of
+
+// const numbers = [1, 2, 3, 4, 5];
+
+// for (let numb of numbers) {
+//   numb = numb * 2;
+//   console.log(numb); // 2 4 6 8 10
+// }
+// console.log(numbers); // массив остается тот же [1, 2, 3, 4, 5]
+
+// ==============================================================
+// цикл  for..of- более современный метод
+
+// const products = ["apples", "grapes", "bananas", "plur"];
+
+// for (const prod of products) {
+//   console.log(prod);
+// }
+
+// -----------------------------------------------------
+
+// ==========================================================
+//вложенные цыклы-------------------------------------
+//-------------------------------------
+// создаем внутри массива цикл массива
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+// for (let i = 0; i < matrix.length; i += 1) {
+//   // сначала мі обрабатівем основной индекс массива
+//   console.log("i:", i);
+//   console.log("matrix[i]:", matrix[i]);
+
+//   for (let j = 0; j < matrix[i].length; j += 1) {
+//     //здесь уже подиндекс в массиве
+//     console.log(matrix[i][j]);
+//   }
+// }
+
+// ----------------------------------------------
+//console.group();
+
+// const matrix = [
+//   [1, 2, 3],
+//   [4, 5, 6],
+//   [7, 8, 9]
+// ];
+// for (let i = 0; i < matrix.length; i += 1) {
+//   console.group(`Iteration${i}`);
+//   console.log("i:", i);
+//   console.log("matrix[i]:", matrix[i]);
+
+//   for (let j = 0; j < matrix[i].length; j += 1) {
+//     console.log(matrix[i][j]);
+//   }
+//   console.groupEnd(`Iteration ${i}`);
+// }
+
+// ===========================================================
+// =======================================
+// Задачка
+
+// напиши скрипт, котоый проверяет произвольную строку в переменной message и находит в ней самое длинное слово, записывая его в переменную longestWord.
+
+// 1.Сделать из строки массив
+// 2. Перебрать массив в цикле
+// Переменна для хранения самого длинного слова и делаем предположение что самое длинное слово это первое
+// на каждой итерации сравнить текущее и новое
+// если новое больше текущего то перезаписать
+//-------
+
+// const message = "May the force be with you";
+// const words = message.split(" "); //to create massive
+// let longestWord = words[0]; // дулаем предположение, что 1-е слово самое длинное, поэтому в итерации мы не будем начинать проверку не с 0, а с 1 (let i = 1)
+
+// // сначала перебор массива с помощью -for-
+// for (let i = 1; i < words.length; i += 1) {
+//   console.log("i:", i);
+//   console.log("words[i]:", words[i]);
+
+//   if (words[i].length > longestWord.length) {
+//     // добавили .length что бы сравнивало именно строки
+//     longestWord = words[i];
+//   }
+// }
+// console.log(words);
+// console.log(longestWord);
+
+// ==========================================================================
+//без предположения большого слова
+
+//(((( const message = "May the force be with you";
+// const words = message.split(" "); //to create massive
+// let longestWord = "";
+
+// for (let i = 0; i < words.length; i += 1) {
+//   if (words[i].length > longestWord.length) {
+//     // добавили .length что бы сравнивало именно строки
+//     longestWord = words[i];
+//   }
+// }
+// console.log(words);
+// console.log(longestWord);))))))
+
+// -------------------------------------
+// также только с for...of
+
+// const message = "May the force be with you";
+// const words = message.split(" ");
+// let longestWord = words[0];
+
+// for (const word of words) {
+//   if (word.length > longestWord.length) {
+//     longestWord = word;
+//   }
+// }
+// console.log(words);
+// console.log(longestWord);
+
+// ======================================
+
+//найти самое большое и самое маленькое число в массиве
+// const maxNum = [5, -1, 40, 355, 17, 3];
+// let bigNum = maxNum[0];
+
+// for (let i = 0; i < maxNum.length; i += 1) {
+//   if (maxNum[i] > bigNum) {
+//     bigNum = maxNum[i];
+//   }
+// }
+// console.log(bigNum);
+
+// =============================================================
+//найти слово у которого слева слово из 4-х букв, а справа из 5-ти
+
+// const message = "qq www eeee rrr ttttt yy";
+// const words = message.split(" ");
+// const max = words.length - 1;
+// const leftCount = 4;
+// const rightCount = 5;
+// let target;
+
+// for (let i = 1; i < max; i += 1) {
+//   console.log(words[i]); // www eeee rrr ttttt
+//   console.log(i);
+//   // const prevIdx = i - 1;
+//   // const prevElementLength = words[prevIdx].length;
+//   // const nextIdx = i + 1;
+//   // const nextElementLength = words[nextIdx].length;
+//   const prevElementLemgth = words[i - 1].length;
+//   const nextElementLemgth = words[i + 1].length;
+
+//   if (prevElementLemgth === leftCount && nextElementLemgth === rightCount) {
+//     target = words[i];
+//   }
+// }
+// console.log(words);
+// console.log(target); // rrr
+
+// ============================================================
+// break
+
+// const clients = ["max", "poly", "john", "eric"];
+// const clientFind = prompt("enter name clients:");
+// let message;
+// for (let i = 0; i < clients.length; i += 1) {
+//   if (clients[i] === clientFind) {
+//     message = `To find ${clientFind}`;
+//     break;
+//   } else {
+//     message = "Not to find";
+//   }
+// }
+// console.log(message);
+
+// ================================================================
+
+// const numbers = [1, 2, 3, 4, 5];
+// // console.log(numbers.includes(3));
+// // const numberToFind = 3;
+// let numberToFind = prompt("Enter from 1 to 5:");
+// let result;
+
+// for (const numb of numbers) {
+//   numberToFind = Number(numberToFind);
+
+//   if (numb === numberToFind) {
+//     result = `Find ${numberToFind}`;
+//     break;
+//   }
+// }
+// console.log(result);

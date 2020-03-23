@@ -1,0 +1,28 @@
+//найти самое большое и самое маленькое число в массиве
+const maxNum = [5, -1, 40, 355, 17, 3];
+let bigNum = maxNum[0];
+
+for (let i = 0; i < maxNum.length; i += 1) {
+  if (maxNum[i] > bigNum) {
+    bigNum = maxNum[i];
+  }
+}
+console.log(bigNum);
+
+//===============================================================================
+//Поиск совпадений чисел в массиве
+const numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.includes(3));
+// const numberToFind = 3;
+let numberToFind = prompt("Enter from 1 to 5:");
+let result;
+
+for (const numb of numbers) {
+  numberToFind = Number(numberToFind);
+
+  if (numb === numberToFind) {
+    result = `Find ${numberToFind}`;
+    break;
+  }
+}
+console.log(result);

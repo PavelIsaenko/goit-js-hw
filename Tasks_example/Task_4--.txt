@@ -1,0 +1,51 @@
+ В prompt("enter name user:") при вводи имени находил необходимое имя!!!!!!!!!!!!!!!!!!!
+// const user1 = "Max";
+// const user2 = "John";
+// const user3 = "Armen";
+// const user4 = "Gogi";
+// const user5 = "Ara";
+
+// const users = [user1, user2, user3, user4, user5];
+// let login = prompt("enter name user:");
+// let message = "No to Find";
+
+// for (const allusers of users) {
+//   if (login === null) {
+//     message = "sorry for your visit";
+//   } else if (allusers === login) {
+//     message = `Find ${login}`;
+//     break;
+//   }
+// }
+
+// console.log(message);
+
+//==============================================================
+
+const clients = ["max", "poly", "john", "eric"];
+let clientFind = prompt("enter name clients:");
+let message;
+for (let i = 0; i < clients.length; i += 1) {
+  if (clients[i] === clientFind) {
+    message = `To find ${clientFind}`;
+    break;
+  } else {
+    message = "Not to find";
+  }
+}
+
+console.log(message);
+
+//============================================================================
+// Человек хочет залогинеться (совпадение)
+
+// const users = ["Mango", "Ajax", "Poly"];
+// const login = prompt("Ener your login");
+
+// const isRegistered = users.includes(login); //ищет совпадение в users
+
+// if (isRegistered) {
+//   console.log("right name");
+// } else {
+//   console.log("wrong data");
+// }

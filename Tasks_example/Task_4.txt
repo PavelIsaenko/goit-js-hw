@@ -1,0 +1,60 @@
+// Задачка
+
+// напиши скрипт, котоый проверяет произвольную строку в переменной message и находит в ней самое длинное слово, записывая его в переменную longestWord.
+
+// 1.Сделать из строки массив
+// 2. Перебрать массив в цикле
+// Переменна для хранения самого длинного слова и делаем предположение что самое длинное слово это первое
+// на каждой итерации сравнить текущее и новое
+// если новое больше текущего то перезаписать
+
+const message = "May the force be with you";
+const words = message.split(" "); //to create massive
+let longestWord = words[0]; // дулаем предположение, что 1-е слово самое длинное, поэтому в итерации мы не будем начинать проверку не с 0, а с 1 (let i = 1)
+
+// сначала перебор массива с помощью -for-
+
+for (let i = 1; i < words.length; i += 1) {
+  console.log("i:", i);
+  console.log("words[i]:", words[i]);
+
+  if (words[i].length > longestWord.length) {
+    // добавили .length что бы сравнивало именно строки
+    longestWord = words[i];
+  }
+}
+console.log(words);
+console.log(longestWord);
+
+//========================================================================
+//находим самое длинное слово без предполложений 
+
+const message = "May the force be with you";
+const words = message.split(" "); //to create massive
+let longestWord = ""; // задаем путсую строку, для того что бы можно было сравнивать 
+
+for (let i = 0; i < words.length; i += 1) {
+ 
+  if (words[i].length > longestWord.length) {
+    // добавили .length что бы сравнивало именно строки
+    longestWord = words[i];
+  }
+}
+console.log(words);
+console.log(longestWord); // force
+
+//---------------------------------------
+// for...of 
+// также только с for...of
+
+// const message = "May the force be with you";
+// const words = message.split(" ");
+// let longestWord = words[0];
+
+// for (const word of words) {
+//   if (word.length > longestWord.length) {
+//     longestWord = word;
+//   }
+// }
+// console.log(words);
+// console.log(longestWord);
