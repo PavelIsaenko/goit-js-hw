@@ -1,0 +1,23 @@
+// как может меняться оригинальный сложный тип типа массыва
+
+const double = function(array) {
+  console.log(array); // [1, 2, 3, 4, 5];
+  array[0] = 10;
+};
+
+const numbers = [1, 2, 3, 4, 5];
+double(numbers);
+console.log(numbers); // [10, 2, 3, 4, 5]
+
+// -------------------========-------------------------
+
+const double = function(array) {
+  console.log(array); // [1, 2, 3, 4, 5]
+  for (let i = 0; i < array.length; i += 1) {
+    array[i] = array[i] * 2;
+  }
+};
+
+const numbers = [1, 2, 3, 4, 5];
+double(numbers);
+console.log(numbers); // [2, 4, 6, 8, 10]

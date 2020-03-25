@@ -9,7 +9,7 @@ ordered = Number(ordered);
 // let ordered = 130;
 
 if (ordered > total) {
-  console.log("На складе недостаточно твоаров!");
-} else if (ordered < total) {
+  console.log("На складе недостаточно товаров!");
+} else {
   console.log("Заказ оформлен, с вами свяжется менеджер");
 }

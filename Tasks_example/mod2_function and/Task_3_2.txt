@@ -1,0 +1,40 @@
+// Посчитать сколько будет стоить гравировка
+// Стоимост одного слова 10 кредитов
+
+// const calculatePrice = function(string, costPerWord) {
+//   let total = 0;
+//   const words = string.split(" ");
+
+//   for (const word of words) {
+//     total += costPerWord;
+//   }
+//   return total;
+// };
+
+// const message = "Aenene imperdiet cras non dolor";
+// const price = calculatePrice(message, 20);
+// console.log(price);
+
+// через console.log()
+
+// console.log(calculatePrice("Aenene imperdiet cras non dolor", 20));
+// console.log(calculatePrice("Aenene imperdiet cras non dolor", 25));
+// console.log(calculatePrice("Aenene imperdiet cras non dolor", 40));
+
+// другой вариант решения-------------------------------------------------
+
+const calculatePrice = function(string, costPerWord) {
+  const words = string.split(" ");
+  const length = words.length;
+  const total = length * costPerWord;
+
+  return total;
+};
+
+// const message = "Aenene imperdiet cras non dolor";
+// const price = calculatePrice(message, 20);
+// console.log(price);
+
+console.log(calculatePrice("Aenene imperdiet cras non dolor", 20));
+console.log(calculatePrice("Aenene imperdiet cras non dolor", 25));
+console.log(calculatePrice("Aenene imperdiet cras non dolor", 40));

@@ -432,10 +432,8 @@
 const showMessage = function() {
   alert("Hi Jack");
   const mess = "what do you want?";
-  alert(mess);
-  // return mess;
+  return mess;
 };
 
-showMessage();
-// alert(showMessage());
+alert(showMessage());
 // alert(showMessage());

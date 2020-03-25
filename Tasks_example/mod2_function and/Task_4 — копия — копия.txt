@@ -1,0 +1,28 @@
+создание из псевдомассива arguments массив
+
+const add = function() {
+  // console.log(arguments);
+  const args = Array.from(arguments); // Это копия аргумента
+  console.log(args); // [5, 1, 2, 3]
+
+  const mult = args[0];
+  args.shift();
+  console.log(args); // убрали первую цифру [1, 2, 3] и так далее
+};
+
+console.log(add(5, 1, 2, 3));
+// console.log(add(10, 1, 2, 3, 4, 5));
+// console.log(add(15, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+----еще один вариант удаления 1-й цифры из массива-----------------------
+
+const add = function() {
+  let args = Array.from(arguments); // const заменили на let
+  console.log(args); // [5, 1, 2, 3]
+
+  const mult = args[0];
+  args = args.slice(1); // вместо shift()
+  console.log(args); // убрали первую цифру [1, 2, 3] и так далее
+};
+
+console.log(add(5, 1, 2, 3));

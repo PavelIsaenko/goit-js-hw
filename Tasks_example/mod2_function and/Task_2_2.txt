@@ -1,0 +1,15 @@
+// Array includes - своими руками (найти совпадающий елемент массива со значением)
+
+const includes = function(array, value) {
+  for (const item of array) {
+    // перебирается весь массив
+    if (item === value) {
+      return true;
+    } //не используем "else if" что бы весь массив перебрал цикл для поиска совпадения и выводим return-> true или false
+  }
+  return false;
+};
+
+console.log(includes([1, 2, 3], 4)); //false
+console.log(includes([1, 2, 3, 4, 5], 2)); // true
+console.log(includes(["mango", "ajax", "poly"], "mango")); //true

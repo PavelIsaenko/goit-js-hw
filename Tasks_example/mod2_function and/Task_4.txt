@@ -1,0 +1,11 @@
+// eщe один вариант решения - параметр по умолчанию-----------------------
+
+const calculatePrice = function(string, costPerWord = 23) {
+  const words = string.split(" ");
+  const length = words.length;
+  const total = length * costPerWord;
+
+  return total;
+};
+
+console.log(calculatePrice("Aenene imperdiet cras non dolor"));
