@@ -584,3 +584,160 @@
 //   }
 // }
 // console.log(result);
+
+// =================================================================
+//---------------function------------------------------------
+
+// ----Training for understand function-----------------------------------------
+
+// const add = function(x, y) {
+//   //   console.log(x);
+//   //   console.log(y);
+//   let plus = x + y;
+//   return plus;
+//   //   console.log(plus);
+//   //   let minus = y - x;
+//   //   console.log(minus);
+// };
+// // console.log(plus);
+
+// console.log(add(2, 3)); //5
+// // add(4, 5);
+
+// ==============================================================
+// нахождение самого длинного слова в строке
+
+// without function method--------------
+
+// const string = "Aeeene imperdient cras non dolor";
+// const words = string.split(" "); //создаем массив
+// console.log(words);
+
+// let longestWord = words[0];// предположения
+// // let shortestWord = words[0];
+
+// for (const word of words) {
+//   if (word.length > longestWord.length) {
+//     longestWord = word;
+//   }
+// }
+
+// console.log(longestWord);
+
+// -----with function-----------------------------------
+
+// const findLongestWord = function(string) {
+//   const words = string.split(" ");
+//   let longestWord = words[0];
+
+//   for (const word of words) {
+//     if (word.length > longestWord.length) {
+//       longestWord = word;
+//     }
+//   }
+//   return longestWord;
+// };
+
+// //Два варианта вывода функции
+// // 1-й
+// const variable = findLongestWord("Aeeene imperdient cras non dolor");
+// console.log(variable);
+// 2-й
+// console.log(findLongestWord("Aeeene imperdient cras non dolor"));
+
+// ===========================================================
+// includes - поиск совпадений
+
+// const includes = function(array, value) {
+//   for (const item of array) {
+//     if (item === value) {
+//       // перебираем весь массив и ввыводит совпадение, если нету то выводит "фолс"
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+
+// console.log(includes([1, 2, 3], 2));
+// console.log(includes([1, 2, 3, 4], 4));
+
+// =====================================================================
+// Посчитать сколько будет стоить гравировка
+// Стоимост одного слова 10 кредитов
+
+// const calculateCost = function(string, costPerWord) {
+//   let total = 0; //предположение
+//   const words = string.split(" "); //создаем массив
+
+//   for (const item of words) {
+//     total += costPerWord;
+//   }
+//   return total; // сюда возвращаем, что бы for (const item of words) прошло весь цикл итерации
+// };
+
+// // 1-st option
+// const sentences = "sdfsd dghf dsge hfghf ddf";
+// const price = calculateCost(sentences, 20);
+// console.log(price);
+
+// // 2-nd option
+// console.log(calculateCost("asafas asafaf dfdf dfdf", 20));
+// console.log(calculateCost("Aenene imperdiet cras non dolor", 25));
+
+//2-й вариант решения -------========================------------
+
+// const calculateCost = function(string, costPerWord) {
+//   const words = string.split(" "); //создаем массив
+//   const length = words.length; // что бы можно было перебрать слова в строке для подсчета
+//   const total = length * costPerWord; // соответсвенно умножаем каждое слово
+
+//   //   const total = words.length * costPerWord;
+
+//   return total;
+// };
+
+// // 1-st option
+// const sentences = "sdfsd dghf dsge hfghf ddf";
+// const price = calculateCost(sentences, 20);
+// console.log(price);
+
+// // 2-nd option
+// console.log(calculateCost("asafas asafaf dfdf dfdf", 20));
+// console.log(calculateCost("Aenene imperdiet cras non dolor", 25));
+// ===============================================================
+
+// const double = function(array) {
+//    //   console.log(array); // [1, 2, 3, 4, 5]
+//    const twiceArray = array;
+//    //   console.log(twiceArray);
+//    for (let i = 0; i < twiceArray.length; i += 1) {
+//      twiceArray[i] = twiceArray[i] * 2;
+//    }
+//    return twiceArray;
+//  };
+//  console.log(double([2, 3, 4, 5, 6])); //[4, 6, 8, 10, 12]
+
+// ==============================================================
+// передача по сылке
+
+// const double = function(array) {
+//   console.log(array); // [1, 2, 3, 4, 5];
+//   array[0] = 10;
+// };
+
+// const numbers = [1, 2, 3, 4, 5];
+// double(numbers);
+// console.log(numbers); // [10, 2, 3, 4, 5]
+
+// ===================================================
+
+// ------------Предикантная функция --------------
+
+// const isEqual = function(a, b) {
+//   return a === b; // Предикантная функция
+// };
+
+// console.log(isEqual(5, 2)); //false - потому что значения не совпадают по условию
+// console.log(isEqual(2, 2)); //true - условия совпадают
+
+//------------------

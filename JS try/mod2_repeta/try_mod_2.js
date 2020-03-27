@@ -128,3 +128,144 @@
 // while(input);
 // alert("Общая сумма чисел равна [" + total +"]");
 
+// ----------------==================---------------
+
+// let userName = "Вася";
+
+// function showMessage() {
+//   let message = "Привет, " + userName;
+//   alert(message);
+//   userName = "Петя"; // (1) изменяем значение внешней переменной
+//   //   alert(message);
+// }
+
+// alert(userName); // Вася - перед вызовом функции
+
+// showMessage(); // Привет, Вася -  перед вызовом функции
+
+// alert(userName); // Петя -  значение внешней переменной было изменено функцией
+// showMessage(); // Привет, Петя -значение внешней переменной было изменено функцией
+
+// ===============================================================
+
+// ==============----------------------------------------
+// const numbers = [9, 2, 8, 23, 54, 4, 1];
+// let min = numbers[0];
+// let input = prompt("to enter lower number:");
+// input = Number(input);
+
+// for (let i = 1; i < numbers.length; i += 1) {
+//   // numbers[i] > min;
+//   let count = numbers[i] > min;
+//   // console.log(count);
+//   if (count === input) {
+//     console.log(true);
+//     // break;
+//   } else {
+//     console.log(false);
+//   }
+// }
+// ========================================================
+
+// const numbers = [9, 2, 8, 23, 54, 4, 1];
+// let min = numbers[0];
+// let input = prompt("to enter lower number:");
+// input = Number(input);
+// let finish;
+
+// for (let i = 1; i < numbers.length; i += 1) {
+//   numbers[i] > min;
+//   min = numbers[i];
+//   console.log(min);
+//   finish = min;
+//   if (finish === input) {
+//     // let count = numbers[i];
+//     // count === input;
+//     console.log(true);
+//     // break;
+//   } else {
+//     console.log(false);
+//   }
+// }
+// ==========================-----------------------------------
+
+// let userName = "Вася";
+
+// function showMessage() {
+//   let userName = "Петя"; // объявляем локальную переменную
+//   alert(userName);
+//   let message = "Привет, " + userName; // Петя
+//   alert(message);
+// }
+
+// // функция создаст и будет использовать свою собственную локальную переменную userName
+// showMessage();
+
+// ==========================================
+
+// function showMessage(from, text) {
+//   from = "*" + from + "*"; // немного украсим "from"
+
+//   alert(from + ": " + text);
+// }
+// let from = "Аня";
+// showMessage(from, "Привет"); // *Аня*: Привет
+
+// // значение "from" осталось прежним, функция изменила значение локальной переменной
+// alert(from); // Аня
+
+//==============================
+
+// function checkAge(age) {
+//   if (age > 18) {
+//     return true;
+//   } else {
+//     return confirm("А родители разрешили?");
+//   }
+// }
+
+// let age = prompt("Сколько вам лет?", 18);
+
+// if (checkAge(age)) {
+//   alert("Доступ получен");
+// } else {
+//   alert("Доступ закрыт");
+// }
+
+// ==========================================----=====
+// from me
+// const double = function(array) {
+//   //   console.log(array); // [1, 2, 3, 4, 5]
+//   const twiceArray = array;
+//   //   console.log(twiceArray);
+//   for (let i = 0; i < twiceArray.length; i += 1) {
+//     twiceArray[i] = twiceArray[i] * 2;
+//   }
+//   return twiceArray;
+// };
+// console.log(double([2, 3, 4, 5, 6])); //[4, 6, 8, 10, 12]
+
+// ============================================
+// ------------------some try---------------
+
+// function sum(arg1, arg2) {
+//   var a = arg1 + arg2; //1+2
+//   return a;
+// }
+// var b = sum(1, 2); //3
+// alert(b); //3
+
+// function add() {
+//   var c = 1 + sum(1, 2); //1+ (3)
+//   return c;
+// }
+// var d = add();
+
+// ========================---------------================
+var variable = "Глобальная переменная";
+function f() {
+  var variable = "Локальная переменная";
+  console.log(variable);
+}
+f(); // Локальная переменная
+console.log(variable); // Глобальная переменная

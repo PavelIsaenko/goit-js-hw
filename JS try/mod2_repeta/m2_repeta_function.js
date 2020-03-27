@@ -248,7 +248,7 @@
 // const price = calculatePrice(message, 20);
 // console.log(price);
 
-// через console.log()
+//  // через console.log();
 
 // console.log(calculatePrice("Aenene imperdiet cras non dolor", 20));
 // console.log(calculatePrice("Aenene imperdiet cras non dolor", 25));
@@ -429,13 +429,3 @@
 
 // ==============================
 
-const showMessage = function() {
-  alert("Hi Jack");
-  const mess = "what do you want?";
-  alert(mess);
-  // return mess;
-};
-
-showMessage();
-// alert(showMessage());
-// alert(showMessage());
