@@ -1,0 +1,111 @@
+const images = [
+  "https://cdn.pixabay.com/photo/2020/03/09/17/03/spring-4916430__340.jpg",
+  "https://cdn.pixabay.com/photo/2020/04/07/17/01/chicks-5014152__340.jpg",
+  "https://cdn.pixabay.com/photo/2020/04/05/08/43/wood-anemone-5005120__340.jpg",
+  "https://cdn.pixabay.com/photo/2018/04/01/17/54/easter-3281582__340.jpg",
+  "https://cdn.pixabay.com/photo/2020/04/07/08/39/azalea-5012549__340.jpg",
+  "https://cdn.pixabay.com/photo/2020/02/06/21/02/background-4825512__340.jpg",
+  "https://cdn.pixabay.com/photo/2018/09/14/10/35/eggs-3676707__340.jpg",
+  "https://cdn.pixabay.com/photo/2019/04/11/12/40/easter-4119709__340.jpg",
+  "https://cdn.pixabay.com/photo/2020/04/06/19/47/easter-eggs-5011031__340.jpg",
+  "https://cdn.pixabay.com/photo/2017/03/02/02/16/place-setting-2110245__340.jpg",
+];
+class Slider {
+  constructor(images) {
+    this.images = images;
+    this.activeSlide = 0;
+    this.layout = this.buildLayout();
+    this.insertLayout(this.container);
+    this.initListener();
+    this.container = document.querySelector(".container");
+  }
+  insertLayout() {
+    document.body.innerHTML = this.layout;
+  }
+  moveLeft() {
+    if (this.activeSlide > 0) {
+      this.activeSlide--;
+      this.container.style.left = -500 * this.activeSlide + "px";
+    }
+  }
+  moveRight() {
+    if (this.activeSlide < this.images.length - 1) {
+      this.activeSlide++;
+      this.container.style.left = -500 * this.activeSlide + "px";
+    }
+  }
+  buildLayout = () => `
+    <div class="slider">
+      <div class="container">
+        ${this.images
+          .map(
+            (src) => `
+          <div class="image__wrapper">
+            <img src=${src} alt"" class="image" />
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+      <button class="arrow arrow--prev js-prev"></button>
+      <button class="arrow arrow--next js-next"></button>
+    </div>
+  `;
+  initListener() {
+    this.prev = document.querySelector(".js-prev");
+    this.next = document.querySelector(".js-next");
+    this.prev.addEventListener("click", this.moveLeft.bind(this));
+    this.next.addEventListener("click", this.moveRight.bind(this));
+  }
+}
+new Slider(images);
+
+//-------------------------------------------------------------------
+[…document.querySelectorAll('img')].map(image => image.src) .  <--- All
+//--------------------------------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.slider {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  height: 100%;
+  position: absolute;
+}
+.image__wrapper {
+  height: 100%;
+  width: 500px;
+}
+.image {
+  object-fit: cover;
+  height: 100%;
+  width: 500px;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+}
+.arrow--prev {
+  left: 20px;
+}
+.arrow--next {
+  right: 20px;
+}
+
+
+
+

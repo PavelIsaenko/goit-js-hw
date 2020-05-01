@@ -1,0 +1,193 @@
+const filter = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements;
+};
+const every = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements.length === array.length;
+};
+const TicTacToe = {
+  isGameFinished: false,
+  currentPlayer: null,
+  winner: null,
+  field: null,
+  resetField() {
+    // reset only field
+  },
+  resetGame() {
+    // reset
+    // 1. isGameFinished
+    // 2. winner
+    // 3. field
+    // 4. currentPlayer
+    //
+    // and something else if needed
+    // start game
+  },
+  colorLog(text) {
+    console.log(`%c${text}`, 'background: #222; color: #bada55'); // что значит код вначале и как он понимает цвет?
+  },
+  sizeField: null,
+  startGame(a) {
+this.sizeField = a;
+    this.colorLog('Game is starting...');
+    this.players = {
+      EMPTY: ' ',
+      X: 'X',
+      O: 'O',
+    };
+    this.field = [];
+    this.field.length = this.sizeField;
+    for(i=0; i < this.sizeField; i++) {
+      this.field[i] = [];
+           for(j=0; j < this.sizeField; j++) {
+        this.field[i][j] = this.players.EMPTY;
+      }
+    }
+    this.currentPlayer = this.players.X;
+    this.printFiled();
+  },
+  printFiled() {
+    for (let i = this.field.length - 1; i > -1; i--) {
+      let string = `${i} `;
+      const row = this.field[i];
+      for (const symbol of row) {
+        string = `${string}|${symbol}`; // как он не печатает повторно номер строки???
+      }
+      string = `${string}|`;
+      console.log(string);
+          }
+          const arr = [];
+          for (let i = 0; i < this.field.length; i++) {
+            arr.push(i);
+          }
+      console.log(`   ${arr.join(' ')}`);
+     },
+  toggleCurrentPlayer() {
+    this.currentPlayer =
+      this.currentPlayer === this.players.X ? this.players.O : this.players.X;
+  },
+  getCurrentPlayerAfterMove() {
+    return this.currentPlayer === this.players.X
+      ? this.players.O
+      : this.players.X;
+  },
+  isValidMove(coordinates) {
+    const [x, y] = coordinates;
+    if (x > this.sizeField-1 || y > this.sizeField-1 || this.field[y][x] !== this.players.EMPTY) {
+      return false;
+    }
+    return true;
+  },
+  makeMove(coordinates) {
+    const [x, y] = coordinates;
+    if (this.isGameFinished) {
+      return;
+    }
+    if (this.isValidMove(coordinates)) {
+      this.field[y][x] = this.currentPlayer;
+      this.toggleCurrentPlayer();
+      this.printFiled();
+      this.colorLog(`Next player: ${this.currentPlayer}`);
+    } else {
+      this.colorLog('Invalid coordinates');
+    }
+    if (this.getWinner()) {
+      this.isGameFinished = true;
+      this.colorLog('Game is finished!');
+      this.colorLog(`The winner is ${this.getCurrentPlayerAfterMove()}`);
+      return;
+    }
+    if (this.getIsFieldFilled()) {
+      this.isGameFinished = true;
+      this.colorLog('Game is finished!');
+      this.colorLog(`Nobody won`);
+    }
+  },
+  getWinner() {
+    //     | | | | | |
+    //     | | | | | |
+    //     |x|x|x|x|x|
+    //     | | | | | |
+    //     | | | | | |
+    for (const row of this.field) {
+      if (every(row, item => item === this.players.X)) {
+        return this.players.X;
+      }
+      if (every(row, item => item === this.players.O)) {
+        return this.players.O;
+      }
+    }
+    //     |x| | | | |
+    //     |x| | | | |
+    //     |x| | | | |
+    //     |x| | | | |
+    //     |x| | | | |
+    for (let i = 0; i < this.field.length; i++) {
+      const arrWinner = [];
+      for (let j = 0; j < this.field.length; j++) {
+arrWinner.push(this.field[j][i])
+      }
+      if (every(arrWinner, item => item === this.players.X)) {
+        return this.players.X;
+      }
+      if (every(arrWinner, item => item === this.players.O)) {
+        return this.players.O;
+      }
+    }
+    //     | | | | |x|
+    //     | | | |x| |
+    //     | | |x| | |
+    //     | |x| | | |
+    //     |x| | | | |
+    const winnerDiagonal = [];
+    for (let i = 0; i < this.field.length; i++) {
+        winnerDiagonal.push(this.field[i][i])
+    }
+      if (every(winnerDiagonal, item => item === this.players.X)) {
+        return this.players.X;
+      }
+      if (every(winnerDiagonal, item => item === this.players.O)) {
+        return this.players.O;
+        };
+    let i = 0;
+   while (i < this.field.length) {
+    const winnerDiagonalBack = [];
+    for (let j = this.field.length-1; j > -1; j--) {
+      winnerDiagonalBack.push(this.field[i][j]);
+      i += 1;
+      }
+  if (every(winnerDiagonalBack, item => item === this.players.X)) {
+        return this.players.X;
+      }
+  if (every(winnerDiagonalBack, item => item === this.players.O)) {
+        return this.players.O;
+      }
+  }
+    return null;
+  },
+  getIsFieldFilled() {
+    let count = 0;
+    for (const row of this.field) {
+      for (const symbol of row) {
+        if (symbol !== this.players.EMPTY) {
+          count++;
+        }
+      }
+    }
+    return count === Math.pow(this.sizeField, 2);
+  },
+};
+TicTacToe.startGame(9);

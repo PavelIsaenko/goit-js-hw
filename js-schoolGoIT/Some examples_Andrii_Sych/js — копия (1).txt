@@ -1,0 +1,24 @@
+const SECRET_NUMBER = 999;
+let tries = 0;
+let answer;
+do {
+  tries++;
+  answer = prompt("Guess the number!");
+  if (answer === null) {
+    break;
+  }
+  answer = Number(answer);
+  console.log("answer -", answer);
+  if (Number.isNaN(answer)) {
+    console.log("Please, enter the number");
+  } else if (answer > SECRET_NUMBER) {
+    console.log("Try smaller number");
+  } else if (answer < SECRET_NUMBER) {
+    console.log("Try bigger number");
+  }
+} while (answer !== SECRET_NUMBER);
+if (answer === SECRET_NUMBER) {
+  console.log(`You guess the number: ${SECRET_NUMBER} with ${tries} try`);
+} else {
+  console.log("You have cancelled the game");
+}

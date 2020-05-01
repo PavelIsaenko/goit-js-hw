@@ -1,0 +1,26 @@
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+const SECRET_NUMBER = Number(prompt("Enter the number!"));
+let tries = 0;
+let answer;
+const start = Date.now();
+do {
+  tries = tries + 1;
+  answer = getRandomInt(0, 1000000);
+  if (answer === null || tries > 1000000) {
+    break;
+  }
+  answer = Number(answer);
+} while (answer !== SECRET_NUMBER);
+const finish = Date.now();
+if (answer === SECRET_NUMBER) {
+  console.log(
+    `You guess the number: ${SECRET_NUMBER} with ${tries} try in ${finish -
+      start} ms`
+  );
+} else {
+  console.log("I stupid computer");
+}

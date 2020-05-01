@@ -188,7 +188,7 @@ let price;
 
 if (country === null) {
   alert("В вашей стране доставка не доступна");
-}
+} else {
 const stringFind = country.toLowerCase();
 
 switch (stringFind) {
@@ -216,4 +216,29 @@ switch (stringFind) {
     message = "nothing";
 }
 
+}
 console.log(message);
+
+//----------------------===========================--------------------------
+5) Last example-------!!!!!!!!!!
+
+let china = "China";
+let priceOfChina = 100;
+let chili = "Chili";
+let priceOfChili = 180;
+
+let country = prompt("Enter country:");
+// country = country.toLowerCase();
+
+if (country === null) {
+  alert("You are wrong");
+} else {
+  country = country.toLowerCase();
+  if (country === china.toLowerCase()) {
+    alert(`You order ${china} and it cost ${priceOfChina}`);
+  } else if (country === chili.toLowerCase()) {
+    alert(`You order ${chili} and it cost ${priceOfChili}`);
+  } else {
+    alert("nothing");
+  }
+}

@@ -1,0 +1,16 @@
+const zodiacSign = prompt("Enter your zodiac sign");
+let datesOfBirth;
+switch (zodiacSign) {
+  case "Capricorn":
+    datesOfBirth = "December 22 – January 20";
+    break;
+  case "Aquarius":
+    datesOfBirth = "January 21 – February 18";
+    break;
+  case "Pisces":
+    datesOfBirth = "February 19 - March 20";
+    break;
+  default:
+    datesOfBirth = "UNKNOWN";
+}
+console.log(`You are ${zodiacSign} and your dates are: ${datesOfBirth}`);

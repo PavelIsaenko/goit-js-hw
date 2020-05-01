@@ -1,0 +1,14 @@
+const getDeviceSerialNumbersByUserId = (users, devices, userId) => {
+  const userArray = users.filter(user => user.userId === userId);
+  const projectsIds = userArray.map(user => user.projectId);
+  const serialNumbers = projectsIds.map(projectId => {
+    const filteredDevices = devices.filter(
+      device => device.projectId === projectId
+    );
+    const serialNums = filteredDevices.map(device => device.serialNumber);
+    return [...serialNums];
+  });
+  return [...new Set(serialNumbers.flat())].sort();
+};
+const result = getDeviceSerialNumbersByUserId(users, devices, 1);
+console.log(result);

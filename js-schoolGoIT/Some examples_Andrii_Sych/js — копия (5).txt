@@ -1,0 +1,87 @@
+const alphabet = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z"
+];
+
+
+let start;
+let end;
+do {
+  start = Number(prompt("enter start"));
+  end = Number(prompt("enter end"));
+} while (start < 0 || end <= boyNames.length - 1);
+const longString = boyNames.slice(start, end).join("");
+console.log("longString length", longString.length);
+const alphabet = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z"
+];
+let maxCount = 0;
+let maxLetter;
+for (const alphabetLetter of alphabet) {
+  let count = 0;
+  if (!longString.includes(alphabetLetter)) {
+    console.log(alphabetLetter, " is not exist");
+    continue;
+  }
+  for (const letter of longString) {
+    if (alphabetLetter === letter.toUpperCase()) {
+      count++;
+    }
+  }
+  if (count > maxCount) {
+    maxCount = count;
+    maxLetter = alphabetLetter;
+  }
+}
+console.log(
+  `"${maxLetter}" встретилась максимальное количество раз: ${maxCount}`
+);

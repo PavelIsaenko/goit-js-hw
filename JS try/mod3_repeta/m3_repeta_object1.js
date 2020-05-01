@@ -51,13 +51,19 @@
 // console.log(formData);
 
 // ==================================================================
+// again -----------------------------
 
-const total = 100;
-const ordered = 50;
-let message = prompt("enter number:");
+const product = {
+  name: "Wunder Waffles",
+  description: "In hac inhability",
+  price: 30
+};
+console.log(product);
 
-if (message > ordered) {
-  console.log("На складе недостаточно твоаров!");
-} else if (message < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-}
+const key = "price";
+console.log(product[key]); // 30
+
+// записываем изменения
+
+product.price = 50;
+console.log(product);

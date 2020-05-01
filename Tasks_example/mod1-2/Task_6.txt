@@ -1,0 +1,16 @@
+// перебор массива и найти подходящее значение с указанием номера индекса
+
+let array = ["a", "b", "c", "d", "f", "g"];
+const elementToFind = prompt("Enter"); // c
+let positionOfElement;
+
+for (let i = 0; i < array.length; i += 1) {
+  //   console.log(`iteration ${i}`);
+
+  if (array[i] === elementToFind) {
+    positionOfElement = i; // указывает позицию елемента введеного
+    break;
+  }
+}
+
+console.log(`position of element: ${positionOfElement}`); // position of element: 2

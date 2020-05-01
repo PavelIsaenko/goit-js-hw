@@ -1,0 +1,25 @@
+// ѕосчитать сколько будет стоить гравировка
+// —тоимост одного слова "__" кредитов
+
+const calculator = function (str) {
+  const sentence = str.split(" ");
+  let price = 10;
+  let total;
+  for (let i = 0; i < sentence.length; i += 1) {
+    total = price * sentence[i].length;
+  }
+  return total;
+};
+
+console.log(calculator("Loren ipsoner cras non dolor non da ferguson")); // 80
+
+// ----------------------
+// const string = "Loren ipsoner cras non dolor";
+// const sentence = string.split(" ");
+// let price = 10;
+// let total;
+
+// for (let i = 0; i < sentence.length; i += 1) {
+//   total = price * sentence[i].length;
+// }
+// console.log(total);

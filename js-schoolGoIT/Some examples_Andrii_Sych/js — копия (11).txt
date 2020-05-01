@@ -1,0 +1,114 @@
+const symbols = {
+  EMPTY: " ",
+  X: "X",
+  O: "O"
+};
+const filter = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements;
+};
+const every = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements.length === array.length;
+};
+const TicTacToe = {
+  isGameFinished: false,
+  winner: null,
+  field: [
+    [symbols.X, symbols.EMPTY, symbols.EMPTY],
+    [symbols.EMPTY, symbols.X, symbols.EMPTY],
+    [symbols.O, symbols.EMPTY, symbols.X]
+  ],
+  updateField(coordinates, symbol) {
+    this.field;
+  },
+  getWinner() {
+    let winner = null;
+    for (const row of this.field) {
+      if (every(row, item => item === symbols.X)) {
+        winner = symbols.X;
+        break;
+      }
+      if (every(row, item => item === symbols.O)) {
+        winner = symbols.O;
+        break;
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      if (
+        this.field[0][i] === symbols.O &&
+        this.field[1][i] === symbols.O &&
+        this.field[2][i] === symbols.O
+      ) {
+        winner = symbols.O;
+      }
+      if (
+        this.field[0][i] === symbols.X &&
+        this.field[1][i] === symbols.X &&
+        this.field[2][i] === symbols.X
+      ) {
+        winner = symbols.X;
+      }
+    }
+    if (
+      this.field[0][0] === symbols.O &&
+      this.field[1][1] === symbols.O &&
+      this.field[2][2] === symbols.O
+    ) {
+      winner = symbols.O;
+    }
+    if (
+      this.field[0][0] === symbols.X &&
+      this.field[1][1] === symbols.X &&
+      this.field[2][2] === symbols.X
+    ) {
+      winner = symbols.X;
+    }
+    if (
+      this.field[2][0] === symbols.O &&
+      this.field[1][1] === symbols.O &&
+      this.field[0][2] === symbols.O
+    ) {
+      winner = symbols.O;
+    }
+    if (
+      this.field[2][0] === symbols.X &&
+      this.field[1][1] === symbols.X &&
+      this.field[0][2] === symbols.X
+    ) {
+      winner = symbols.X;
+    }
+    return winner;
+  },
+  getIsGameFinished() {
+    if (this.getWinner()) {
+      return true;
+    } else {
+      let count = 0;
+      for (const row of this.field) {
+        for (const symbol of row) {
+          if (symbol !== symbols.EMPTY) {
+            count++;
+          }
+        }
+      }
+      return count === 9;
+    }
+  },
+  canMakeMove() {
+    return true || false;
+  }
+};
+console.log(TicTacToe.getWinner());

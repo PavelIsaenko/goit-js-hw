@@ -1,0 +1,170 @@
+const filter = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements;
+};
+const every = function(array, test) {
+  const filteredElements = [];
+  for (const element of array) {
+    const passed = test(element);
+    if (passed) {
+      filteredElements.push(element);
+    }
+  }
+  return filteredElements.length === array.length;
+};
+const TicTacToe = {
+  isGameFinished: false,
+  currentPlayer: null,
+  winner: null,
+  field: null,
+  resetField() {
+    // reset only field
+  },
+  resetGame() {
+    // reset
+    // 1. isGameFinished
+    // 2. winner
+    // 3. field
+    // 4. currentPlayer
+    //
+    // and something else if needed
+    // start game
+  },
+  colorLog(text) {
+    console.log(`%c${text}`, "background: #222; color: #bada55");
+  },
+  startGame() {
+    this.colorLog("Game is starting...");
+    this.players = {
+      EMPTY: " ",
+      X: "X",
+      O: "O"
+    };
+    this.field = [
+      [this.players.EMPTY, this.players.EMPTY, this.players.EMPTY],
+      [this.players.EMPTY, this.players.EMPTY, this.players.EMPTY],
+      [this.players.EMPTY, this.players.EMPTY, this.players.EMPTY]
+    ];
+    this.currentPlayer = this.players.X;
+    this.printFiled();
+  },
+  printFiled() {
+    for (let i = this.field.length - 1; i > -1; i--) {
+      let string = `${i} `;
+      const row = this.field[i];
+      for (const symbol of row) {
+        string = `${string}|${symbol}`;
+      }
+      string = `${string}|`;
+      console.log(string);
+    }
+    console.log(`   0 1 2`);
+  },
+  toggleCurrentPlayer() {
+    this.currentPlayer =
+      this.currentPlayer === this.players.X ? this.players.O : this.players.X;
+  },
+  getCurrentPlayerAfterMove() {
+    return this.currentPlayer === this.players.X
+      ? this.players.O
+      : this.players.X;
+  },
+  isValidMove(coordinates) {
+    const [x, y] = coordinates;
+    if (x > 2 || y > 2 || this.field[y][x] !== this.players.EMPTY) {
+      return false;
+    }
+    return true;
+  },
+  makeMove(coordinates) {
+    const [x, y] = coordinates;
+    if (this.isGameFinished) {
+      return;
+    }
+    if (this.isValidMove(coordinates)) {
+      this.field[y][x] = this.currentPlayer;
+      this.toggleCurrentPlayer();
+      this.printFiled();
+      this.colorLog(`Next player: ${this.currentPlayer}`);
+    } else {
+      this.colorLog("Invalid coordinates");
+    }
+    if (this.getWinner()) {
+      this.isGameFinished = true;
+      this.colorLog("Game is finished!");
+      this.colorLog(`The winner is ${this.getCurrentPlayerAfterMove()}`);
+      return;
+    }
+    if (this.getIsFieldFilled()) {
+      this.isGameFinished = true;
+      this.colorLog("Game is finished!");
+      this.colorLog(`Nobody won`);
+    }
+  },
+  getWinner() {
+    //     | | | |
+    //     |x|x|x|
+    //     | | | |
+    for (const row of this.field) {
+      if (every(row, item => item === this.players.X)) {
+        return this.players.X;
+      }
+      if (every(row, item => item === this.players.O)) {
+        return this.players.O;
+      }
+    }
+    //     | | |x|
+    //     | | |x|
+    //     | | |x|
+    for (let i = 0; i < 3; i++) {
+      const top = this.field[0][i];
+      const center = this.field[1][i];
+      const bottom = this.field[2][i];
+      if (
+        center !== this.players.EMPTY &&
+        center === top &&
+        center === bottom
+      ) {
+        return center;
+      }
+    }
+    //     |x| | |
+    //     | |x| |
+    //     | | |x|
+    const center = this.field[1][1];
+    const topLeftCorner = this.field[0][0];
+    const topRightCorner = this.field[0][2];
+    const bottomLeftCorner = this.field[2][0];
+    const bottomRightCorner = this.field[2][2];
+    if (center === this.players.EMPTY) {
+      return null;
+    }
+    if (
+      (topLeftCorner === center && bottomRightCorner === center) ||
+      (topRightCorner === center && bottomLeftCorner === center)
+    ) {
+      return center;
+    }
+    return null;
+  },
+  getIsFieldFilled() {
+    let count = 0;
+    for (const row of this.field) {
+      for (const symbol of row) {
+        if (symbol !== this.players.EMPTY) {
+          count++;
+        }
+      }
+    }
+    return count === 9;
+  }
+};
+TicTacToe.startGame();
+// TicTacToe.makeMove([1, 0]);
+// TicTacToe.makeMove([1, 2]);

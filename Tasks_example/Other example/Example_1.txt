@@ -1,0 +1,29 @@
+// сумирование чисел массива!!!!!!!!!!!!!!!!!1-------------------
+// let numb = [3, 2, 5, 6];
+// let sum = numb.join(); //создаем строку с массива
+// // console.log(sum);
+// let clearStr = sum.replace(/[\s.,%]/g, ""); // убираем запятые в строке-массив
+// clearStr = clearStr.toString();
+// // console.log(clearStr);
+
+// let count = 0; //создаем переменную для подсчета чисел
+
+// for (let i = 0; i < clearStr.length; i += 1) {
+//   //   count += clearStr[i]; // видит как строку, а не числа
+//   count += Number(clearStr[i]); //превращает в числовые значение
+// }
+// console.log(count);
+
+----------------------------------------------------------------
+
+//сумирование чисел массива!!!!!!!!!!!!!!!!!!!1
+// let numbers = [1, 2, 3, 4, 5, 6];
+// numbers = numbers.join("");
+// console.log(numbers);
+
+// let count = 0;
+
+// for (let i = 0; i < numbers.length; i += 1) {
+//   count += Number(numbers[i]);
+// }
+// console.log(count); // 21

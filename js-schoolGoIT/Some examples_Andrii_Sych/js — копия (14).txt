@@ -1,0 +1,8 @@
+function Message(sender, text) {
+  this.text = text;
+  this.sender = sender;
+  this.id = Math.random();
+  this.date = new Date();
+}
+const message = new Message("Andrey", "Hello world");
+console.log(message);

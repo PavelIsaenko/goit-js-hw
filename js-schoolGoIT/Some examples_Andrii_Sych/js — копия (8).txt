@@ -1,0 +1,72 @@
+const users = [
+  {
+    firstName: "Andrey",
+    secondName: "Sych",
+    age: 29,
+    isAdmin: true,
+    location: {
+      city: "Kiev",
+      district: "Obolon",
+      postcode: 04212,
+      coordinates: [50.5050994, 30.48926302]
+    },
+    skills: ["Javascript", "HTML", "CSS", "React"],
+    email: "andreysych@gmail.com",
+    id: "07aa8dc1-1a54-4623-a873-60979c2f9228"
+  },
+  {
+    firstName: "Piter",
+    secondName: "Parker",
+    age: 28,
+    isAdmin: false,
+    location: {
+      city: "New York",
+      district: "Brooklyn",
+      postcode: 11239,
+      coordinates: [40.6453531, -74.0150372]
+    },
+    skills: ["Flying", "Jumping"],
+    email: "piterparker@gmail.com",
+    id: "8b7945c3-edb5-48ae-aa8e-1abb90bbeed1",
+    superHero: true,
+    universe: "Marvel"
+  }
+];
+const passwords = {
+  "07aa8dc1-1a54-4623-a873-60979c2f9228": "hello-world",
+  "8b7945c3-edb5-48ae-aa8e-1abb90bbeed1": "123456",
+  "3c304a52-9059-488b-8d51-c87a3a90f908": "123456",
+  "e3a595f4-eaaf-4fb8-8561-f6c372dd2aad": "love-money",
+  "f6243282-25b0-47c9-818a-4da75cc5dcee": "big-japan",
+  "dc24f011-ef83-44ad-9b5d-df70302b62b8": "mountains"
+};
+let currentUser = null;
+const login = () => {
+  // get email
+  // get passwords
+  // compare email and password
+  // if correct -> login and print info
+  // else show user alert - wrong password or email
+  const userEmail = prompt("Enter your email");
+  const userPassword = prompt("Enter your password");
+  for (const user of users) {
+    const { email, id } = user;
+    if (email === userEmail) {
+      const pass = passwords[id];
+      if (pass === userPassword) {
+        currentUser === user;
+      }
+    }
+  }
+};
+const printUserInfo = user => {
+  if (!user) {
+    console.log("You are not authorized");
+  }
+  const { firstName, secondName, age, location } = user;
+  console.log(
+    `You are ${firstName} ${secondName}, ${age} years old and you live in ${location.city} `
+  );
+};
+login();
+printUserInfo(currentUser);
