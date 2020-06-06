@@ -1,0 +1,35 @@
+// ----------Working option--------------
+
+function random(randnumb) {
+  return Math.ceil(Math.random() * 100);
+}
+
+let name = prompt("Hello! What is your name?");
+
+while (name == "" || name == null) {
+  name = prompt("Hello! What is your name?");
+}
+
+alert(`${name}, to guess number from 1 to 100`);
+
+let number = random(100);
+alert(number); // выдаест случайное число
+let guess = prompt("What number am I guessing?");
+let guessOfNumbers = 0;
+
+while (guess !== number) {
+  // guess = prompt("What number am I guessing?");
+  // let sum = Number(guess);
+  guess = Number(guess);
+  if (guess > number) {
+    guess = prompt("Try the less number");
+    // guessOfNumbers = guessOfNumbers + 1;
+  }
+  if (guess < number) {
+    guess = prompt("Try the biggest number");
+    // guessOfNumbers = guessOfNumbers + 1;
+  }
+  guessOfNumbers = guessOfNumbers + 1; // что бы был правильный подсчет
+}
+
+alert(`You are right this is ${number} and you needed ${guessOfNumbers}`);

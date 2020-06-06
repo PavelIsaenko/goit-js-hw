@@ -63,4 +63,58 @@
 
 // ----zzzzzzzzzzzzzz----------------zzzzzzzzzzzzzzzzzzz
 // -----------------------again-------------------------
+// let userInput;
+// let initialValue = 0;
+// let iteration = 0;
 
+// do {
+//   userInput = prompt(`Current result ${initialValue}\nEnter operation`);
+//   if (userInput !== null) {
+//     const operation = userInput.slice(0, 1);
+
+//     if (
+//       operation === "+" ||
+//       operation === "-" ||
+//       operation === "/" ||
+//       operation === "*"
+//     ) {
+//       //   const nuber = userInput.slice(1); // альтернатива
+//       const number = Number(userInput.slice(1, userInput.length));
+//       if (isNaN(number)) {
+//         alert("You entered a wrong value");
+//       } else {
+//         let result;
+//         if (operation === "+") {
+//           result = initialValue + number;
+//         } else if (operation === "-") {
+//           result = initialValue - number;
+//         } else if (operation === "/") {
+//           result = initialValue / number;
+//         } else if (operation === "*") {
+//           result = initialValue * number;
+//         }
+
+//         //  console.log("Result 0" + operation + number + "=" + initialValue);
+//         alert(
+//           `Result operation : ${initialValue} ${operation} ${number} = ${result}`
+//         );
+//         initialValue = result;
+//       }
+//     } else {
+//       alert("operation is cancel");
+//     }
+//   }
+//   //   break;
+//   iteration += 1;
+// } while (userInput !== null && userInput !== "" && iteration < 5);
+// alert("Calculator has finished");
+
+// --------------------------------------------
+// кратные числа-----====
+// --------------------------------------------
+
+for (let i = 0; i < 100; i += 1) {
+  if (i % 5 == 0) {
+    console.log(i);
+  }
+}

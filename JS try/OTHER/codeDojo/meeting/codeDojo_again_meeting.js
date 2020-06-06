@@ -122,7 +122,10 @@ alert(number); // выдаест случайное число
 let guess = prompt("What number am I guessing?");
 let guessOfNumbers = 0;
 
-while (guess != number) {
+while (guess !== number) {
+  // guess = prompt("What number am I guessing?");
+  // let sum = Number(guess);
+  guess = Number(guess);
   if (guess > number) {
     guess = prompt("Try the less number");
     // guessOfNumbers = guessOfNumbers + 1;

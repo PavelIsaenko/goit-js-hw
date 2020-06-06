@@ -521,14 +521,51 @@
 // }
 // alert(`Общая сумма чисел равна ${total}`);
 
-// ---------------------------------------
+// --------------else more-------------------------
 
-let total = 0;
-let input;
+// let total = 0;
+// let input;
 
-do {
-  input = prompt("Введите число:");
-  let num = Number(input);
-  total += num;
-} while (input !== null);
-alert(`Общая сумма чисел равна ${total}`);
+// do {
+//   input = prompt("Введите число:");
+//   let num = Number(input);
+//   total += num;
+// } while (input !== null);
+// alert(`Общая сумма чисел равна ${total}`);
+
+// -------------------------------
+
+// const printMessage = function (message) {
+//   console.log(message);
+// };
+
+// const higherOrderFunction = function (callback) {
+//   const string = "HOCs are awesome";
+//   callback(string);
+// };
+
+// higherOrderFunction(printMessage);
+
+// -------------------
+
+// let total = 0;
+// let input = prompt("Введите число:");
+// let num = Number(input);
+// do {
+//   // input = prompt("Введите число:");
+//   // let num = Number(input);
+//   total += num;
+// } while (input !== null);
+// alert(`Общая сумма чисел равна ${total}`);
+// -----------
+
+const employee = {
+  baseSalary: 30000,
+  overtime: 10,
+  rate: 20,
+  getWage() {
+    return this.baseSalary + this.overtime * this.rate;
+  },
+};
+
+console.log(employee.getWage());
