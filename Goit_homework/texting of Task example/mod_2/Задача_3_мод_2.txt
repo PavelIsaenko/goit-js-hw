@@ -1,26 +1,64 @@
-Задание 2
-Напиши скрипт проверки количества товаров на складе. Есть переменные total (количество товаров на складе) и ordered (единиц товара в заказе).
+3)
 
-Сравни эти значения и по результатам выведи:
+Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
 
-Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение "На складе недостаточно твоаров!".
-В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
-Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
+const findLongestWord = function(string) {
+  // твой код
+};
 
-const total = 100;
-const ordered = 50;
-===========================================================
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
 
-const total = 100;
-let ordered = prompt("единиц товара в заказе:");
-ordered = Number(ordered);
-// let ordered = 20;
-// let ordered = 50;
-// let ordered = 80;
-// let ordered = 130;
+console.log(findLongestWord('Google do a roll')); // 'Google'
 
-if (ordered > total) {
-  console.log("На складе недостаточно твоаров!");
-} else if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-}
+console.log(findLongestWord('May the force be with you')); // 'force'
+
+//------------------------------------------------------------------------------------
+
+1-st option (main):
+
+"use strict";
+
+const findLongestWord = function (string) {
+  const sentence = string.split(" ");
+  console.log(sentence);
+  let longWord = "";
+  for (let i = 0; i < sentence.length; i += 1) {
+    if (sentence[i].length > longWord.length) {
+      longWord = sentence[i];
+    }
+  }
+  return longWord;
+};
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+console.log(findLongestWord("Google do a roll"));
+console.log(findLongestWord("May the force be with you"));
+
+//--------------------------------------------------------------------------------------------
+
+2-nd option:
+
+const findLongestWord = function (string) {
+  const sentence = string.split(" ");
+  let longWord = sentence[0];
+
+  //   for (let i = 0; i < sentence.length; i += 1) {
+  //     if (sentence[i].length > longWord.length) {
+  //       longWord = sentence[i];
+  //     }
+  //   }
+
+  for (let word of sentence) {
+    if (word.length > longWord.length) {
+      longWord = word;
+    }
+  }
+  return longWord;
+};
+
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+console.log(findLongestWord("Google do a roll"));
+console.log(findLongestWord("May the force be with you"));
