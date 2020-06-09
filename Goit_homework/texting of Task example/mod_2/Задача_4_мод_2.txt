@@ -1,26 +1,47 @@
-Задание 2
-Напиши скрипт проверки количества товаров на складе. Есть переменные total (количество товаров на складе) и ordered (единиц товара в заказе).
+Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
 
-Сравни эти значения и по результатам выведи:
+Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+Если длина больше 40 символов, то функция обрезает строку до 40-ка символов и добавляет в конец строки троеточие '...', после чего возвращает укороченную версию.
+const formatString = function(string) {
+  // твой код
+};
 
-Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение "На складе недостаточно твоаров!".
-В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
-Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
 
-const total = 100;
-const ordered = 50;
-===========================================================
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
 
-const total = 100;
-let ordered = prompt("единиц товара в заказе:");
-ordered = Number(ordered);
-// let ordered = 20;
-// let ordered = 50;
-// let ordered = 80;
-// let ordered = 130;
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
 
-if (ordered > total) {
-  console.log("На складе недостаточно твоаров!");
-} else if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-}
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);
+// вернется форматированная строка
+
+//----------------------------------------------------------------------------------------------
+
+"use strict";
+
+const formatString = function (string) {
+  if (string.length <= 40) {
+    return string;
+  } else {
+    return string.slice(0, 41) + "...";
+  }
+};
+
+console.log(formatString("Curabitur ligula sapien, tincidunt non.")); // Curabitur ligula sapien, tincidunt non.
+console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis.")); // Vestibulum facilisis, purus nec pulvinar ...
+console.log(formatString("Curabitur ligula sapien.")); // Curabitur ligula sapien.
+console.log(
+  formatString(
+    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
+  )
+); // Nunc sed turpis. Curabitur a felis in nun...
