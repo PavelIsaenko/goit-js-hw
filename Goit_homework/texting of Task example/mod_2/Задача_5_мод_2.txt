@@ -1,26 +1,38 @@
-Задание 2
-Напиши скрипт проверки количества товаров на складе. Есть переменные total (количество товаров на складе) и ordered (единиц товара в заказе).
+Задание 5
+Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. Функция проверяет ее на содержание слов spam и sale. Если нашли зарещенное слово то функция возвращает true, если запрещенных слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
 
-Сравни эти значения и по результатам выведи:
+const checkForSpam = function(message) {
+  // твой код
+};
 
-Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение "На складе недостаточно твоаров!".
-В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
-Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(checkForSpam('Latest technology news')); // false
 
-const total = 100;
-const ordered = 50;
-===========================================================
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-const total = 100;
-let ordered = prompt("единиц товара в заказе:");
-ordered = Number(ordered);
-// let ordered = 20;
-// let ordered = 50;
-// let ordered = 80;
-// let ordered = 130;
+console.log(checkForSpam('Get best sale offers now!')); // true
 
-if (ordered > total) {
-  console.log("На складе недостаточно твоаров!");
-} else if (ordered < total) {
-  console.log("Заказ оформлен, с вами свяжется менеджер");
-}
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+
+//---------------------------------------------------------------------------------
+
+"use strict";
+
+const checkForSpam = function (message) {
+  message = message.toLowerCase();
+
+  if (message.includes("spam") || message.includes("sale")) {
+    return true;
+  }
+  return false;
+};
+
+console.log(checkForSpam("Latest technology news")); // false
+
+console.log(checkForSpam("JavaScript weekly newsletter")); // false
+
+console.log(checkForSpam("Get best sale offers now!")); // true
+
+console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
