@@ -124,31 +124,38 @@
 // ///// //// //// /// // // / // / ///// / ////////////////////
 // ----------creatr link each other obj---compare !!!!!!!!!!!
 
-const Hero = function (name) {
-  this.name = name;
-};
+// const Hero = function (name) {
+//   this.name = name;
+// };
 
-Hero.prototype.changeName = function (name) {
-  console.log("this:", this);
-  this.name = name;
-};
+// Hero.prototype.changeName = function (name) {
+//   console.log("this:", this);
+//   this.name = name;
+// };
 
-console.log("Hero.prototype:", Hero.prototype);
+// console.log("Hero.prototype:", Hero.prototype);
 
-const mango = new Hero("Mango", 1000);
-mango.changeName("Pasha");
-console.log(mango);
+// const mango = new Hero("Mango", 1000);
+// mango.changeName("Pasha");
+// console.log(mango);
 
-console.log(
-  "mango.__proto__===Hero.prototype:",
-  mango.__proto__ === Hero.prototype
-);
+// console.log(
+//   "mango.__proto__===Hero.prototype:",
+//   mango.__proto__ === Hero.prototype
+// );
 
-const poly = new Hero("Poly", 2000);
-poly.changeName("Ploy change name");
-console.log(poly);
+// const poly = new Hero("Poly", 2000);
+// poly.changeName("Ploy change name");
+// console.log(poly);
 
-console.log(
-  "poly.__proto__===Hero.prototype:",
-  poly.__proto__ === Hero.prototype
-);
+// console.log(
+//   "poly.__proto__===Hero.prototype:",
+//   poly.__proto__ === Hero.prototype
+// );
+
+// ...// ....////.....///....////.....////....///...///...//....///
+//----------------------Repeta Again------------------------------
+
+const Fn = function () {};
+
+const ex = new Fn();
