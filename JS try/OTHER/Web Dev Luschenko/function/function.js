@@ -14,13 +14,22 @@
 // console.log(snake());
 
 // ===============---------------================
-function cs2() {
-  let c = 1;
-  return function() {
-    c++;
-    console.log(c);
-  };
-}
+// function cs2() {
+//   let c = 1;
+//   return function() {
+//     c++;
+//     console.log(c);
+//   };
+// }
 
-let d = cs2();
-d();
+// let d = cs2();
+// d();
+
+// =========----------==========
+
+const fn = function (a, b) {
+  let c = a + b;
+  return c;
+};
+
+console.log(fn(1, 2));
