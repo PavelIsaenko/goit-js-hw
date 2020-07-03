@@ -1,0 +1,47 @@
+function generateId() {
+  const randomNumber = Math.random();
+  return randomNumber.toString().slice(2);
+}
+
+const shop = {
+  name: "Shop #1",
+  address: "Kiev",
+  items: [
+    { id: "1", name: "Test item", price: 100, amount: 200, category: "fruits" },
+    { id: "2", name: "apples", price: 90, amount: 105, category: "fruits" },
+    { id: "3", name: "grape", price: 190, amount: 205, category: "fruits" },
+    { id: "4", name: "pinapples", price: 390, amount: 45, category: "fruits" },
+    { id: "5", name: "lemons", price: 10, amount: 145, category: "fruits" },
+  ],
+
+staff: {
+    id_1: { name: "Staff 1", age: 30, salary: 1000 },
+    id_2: { name: "Staff 2", age: 25, salary: 1001 },
+  },
+
+  // метод показа сотрудников
+  showStaff() {
+    //   вариант 1 - цикл for in
+    //  for (const key in this.staff) {
+    //    const { name, age, salary } = this.staff[key];
+    //    console.log(`${key} - name:${name}, age: ${age}, salary: ${salary}`);
+    //  }
+    //  ---------------------------------------
+    // вариант 2 - цикл for of
+    const keys = Object.keys(this.staff);
+    for (const key of keys) {
+      const { name, age, salary } = this.staff[key];
+      console.log(`${key} - name:${name}, age: ${age}, salary: ${salary}`);
+    }
+    //  -------------------------------------
+    // пример ииспользования без ключа - key
+    const values = Object.values(this.staff);
+    for (const value of values) {
+      const { name, age, salary } = value;
+      console.log(` name:${name}, age: ${age}, salary: ${salary}`);
+    }
+  },
+};
+
+shop.showStaff(); // id_1 - name:Staff 1, age: 30, salary: 1000
+// id_2 - name:Staff 2, age: 25, salary: 1001

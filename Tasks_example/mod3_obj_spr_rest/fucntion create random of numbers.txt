@@ -1,0 +1,5 @@
+// создадим функцию  - создания рандомного иденитификатора  !!!!
+function generateId() {
+  const randomNumber = Math.random();
+  return randomNumber.toString().slice(2);
+}

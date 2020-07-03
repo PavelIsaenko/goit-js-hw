@@ -11,8 +11,8 @@ const findBestEmployee = function (employees) {
       name = key;
     }
   }
-  return console.log(`${name}: ${max}`);
-  //   return { name, tasksCompleted: max };
+
+  return { name, tasksCompleted: max };
 };
 
 console.log(
